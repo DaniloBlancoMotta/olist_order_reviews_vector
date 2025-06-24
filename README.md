@@ -25,25 +25,25 @@
 
 ```
 olist-reviews/
-├── 📁 src/olist_reviews/          # Código fonte principal (pacote Python)
-│   ├── 📁 api/                    # Endpoints FastAPI (1 arquivo)
-│   ├── 📁 sentiment/              # Análise de sentimentos (1 arquivo)
-│   ├── 📁 rag/                    # Busca semântica (1 arquivo)
-│   ├── 📁 utils/                  # Utilitários (1 arquivo)
-│   └── config.py                  # Configurações centralizadas
-├── 📁 data/                       # Datasets e índices (3 arquivos, 77MB)
-├── 📁 tests/                      # Testes automatizados (2 arquivos)
-├── 📁 docs/                       # Documentação (4 arquivos)
-├── 📁 notebooks/                  # Jupyter notebooks (3 arquivos)
-├── 📁 examples/                   # Exemplos de uso (1 arquivo)
-├── 📁 scripts/                    # Scripts utilitários (2 arquivos)
-├── run.py                         # Script principal de execução
-├── setup.py                       # Configuração do pacote
-├── requirements.txt               # Dependências (18 pacotes)
-├── README.md                      # Documentação principal
-├── LICENSE                        # Licença MIT
-└── .gitignore                     # Arquivos ignorados pelo Git
-```
+├── 📁 src/olist_reviews/          
+│   ├── 📁 api/                   
+│   ├── 📁 sentiment/              
+│   ├── 📁 rag/                  
+│   ├── 📁 utils/                
+│   └── config.py                  
+├── 📁 data/                      
+├── 📁 tests/                      
+├── 📁 docs/                       
+├── 📁 notebooks/                  
+├── 📁 examples/                   
+├── 📁 scripts/                    
+├── run.py                         
+├── setup.py                       
+├── requirements.txt               
+├── README.md                     
+├── LICENSE                       
+└── .gitignore                     
+
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -107,17 +107,6 @@ python scripts/build_index.py
 # 3. Iniciar API
 python run.py --start-api
 ```
-
-### Instalação como Pacote
-
-```bash
-# Instalação em modo desenvolvimento
-pip install -e .
-
-# Instalação com dependências de desenvolvimento
-pip install -e .[dev]
-```
-
 
 
 ### 2. Exemplo de Uso - Análise de Sentimentos
@@ -227,8 +216,6 @@ class Config:
     API_HOST =
     API_PORT = 
 
-
-```
 
 
 
