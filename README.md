@@ -118,19 +118,7 @@ pip install -e .
 pip install -e .[dev]
 ```
 
-## 🚀 Como Usar
 
-### 1. Iniciar a API
-
-```bash
-python run.py --start-api
-```
-
-A API estará disponível em:
-- **🌐 API**: http://localhost:8000
-- **📖 Documentação**: http://localhost:8000/docs
-- **🔍 Health Check**: http://localhost:8000/health
-- **📊 Estatísticas**: http://localhost:8000/stats
 
 ### 2. Exemplo de Uso - Análise de Sentimentos
 
@@ -144,11 +132,11 @@ response = requests.post(
 )
 
 result = response.json()
-print(f"🎭 Sentimento: {result['predominant_sentiment']}")
-print(f"📊 Total reviews: {result['total_reviews']}")
-print(f"📝 Resumo: {result['summary']}")
-print(f"✅ Pontos positivos: {result['positive_points']}")
-print(f"❌ Pontos negativos: {result['negative_points']}")
+print(f" Sentimento: {result['predominant_sentiment']}")
+print(f" Total reviews: {result['total_reviews']}")
+print(f" Resumo: {result['summary']}")
+print(f" Pontos positivos: {result['positive_points']}")
+print(f" Pontos negativos: {result['negative_points']}")
 ```
 
 ### 3. Exemplo de Uso - Consulta RAG
@@ -161,16 +149,9 @@ response = requests.post(
         "query": "qualidade do produto e entrega",
         "top_k": 5,
         "similarity_threshold": 0.7
-    }
-)
 
-result = response.json()
-print(f"🔍 Query: {result['query']}")
-print(f"📄 Documentos encontrados: {result['documentos_encontrados']}")
-print(f"⏱️ Tempo de processamento: {result['tempo_processamento']:.2f}s")
-```
 
-## 📊 Endpoints da API
+##  Endpoints da API
 
 | Endpoint | Método | Descrição | Status |
 |----------|--------|-----------|--------|
@@ -219,9 +200,6 @@ export SENTIMENT_MODEL="distilbert-base-uncased-finetuned-sst-2-english"
 export BERT_MODEL="bert-base-uncased"
 
 # API
-export API_HOST="0.0.0.0"
-export API_PORT="8000"
-export API_DEBUG="true"
 
 # RAG
 export TOP_K_RESULTS="5"
@@ -246,158 +224,13 @@ class Config:
     SENTIMENT_MODEL = "distilbert-base-uncased-finetuned-sst-2-english"
     
     # Configurações da API
-    API_HOST = "0.0.0.0"
-    API_PORT = 8000
+    API_HOST =
+    API_PORT = 
+
+
 ```
 
-## 🧪 Testes
 
-### Executar Testes Automatizados
 
-```bash
-# Testes da API
-python tests/test_api.py
 
-# Testes de ambiente
-python tests/test_env_api.py
 
-# Exemplo prático
-python examples/exemplo_uso.py
-```
-
-### Testes Manuais
-
-```bash
-# Health check
-curl http://localhost:8000/health
-
-# Estatísticas
-curl http://localhost:8000/stats
-
-# Análise de sentimentos
-curl -X POST "http://localhost:8000/analyze_sentiment" \
-     -H "Content-Type: application/json" \
-     -d '{"product_id": "smartphone"}'
-```
-
-## 📚 Documentação
-
-| Documento | Descrição | Link |
-|-----------|-----------|------|
-| **README Principal** | Visão geral do projeto | [README.md](README.md) |
-| **Guia de Integração** | Como integrar a API | [docs/README_INTEGRATION.md](docs/README_INTEGRATION.md) |
-| **Quick Start** | Setup rápido | [docs/QUICKSTART.md](docs/QUICKSTART.md) |
-| **Estrutura do Projeto** | Organização dos arquivos | [docs/STRUCTURE.md](docs/STRUCTURE.md) |
-| **API Docs** | Documentação interativa | http://localhost:8000/docs |
-
-## 🔄 Fluxo de Desenvolvimento
-
-### 1. **Desenvolvimento Local**
-```bash
-# Instalar em modo desenvolvimento
-pip install -e .
-
-# Executar testes
-python tests/test_api.py
-
-# Executar exemplo
-python examples/exemplo_uso.py
-```
-
-### 2. **Construção de Índices**
-```bash
-# Construir índice FAISS
-python scripts/build_index.py
-
-# Ou usar o script principal
-python run.py --build-index
-```
-
-### 3. **Execução da API**
-```bash
-# Iniciar API
-python run.py --start-api
-
-# Ou setup completo
-python run.py --full-setup
-```
-
-## 📈 Performance e Métricas
-
-### ⚡ Performance
-- **Tempo de resposta**: < 2 segundos para análise de sentimentos
-- **Busca semântica**: < 1 segundo para consultas RAG
-- **Índice FAISS**: 55MB com +100k reviews indexados
-- **Modelos**: Carregamento inicial ~30 segundos
-
-### 📊 Capacidades
-- **Reviews processados**: +100k reviews brasileiros
-- **Embeddings**: 384 dimensões por review
-- **Busca semântica**: Top-K com threshold configurável
-- **Análise de sentimentos**: 3 classes (positivo, neutro, negativo)
-
-## 🤝 Contribuindo
-
-### Como Contribuir
-
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** para a branch (`git push origin feature/AmazingFeature`)
-5. **Abra** um Pull Request
-
-### Diretrizes de Contribuição
-
-- ✅ Siga o padrão de código existente
-- ✅ Adicione testes para novas funcionalidades
-- ✅ Atualize a documentação quando necessário
-- ✅ Use commits descritivos
-- ✅ Mantenha a compatibilidade com versões anteriores
-
-## 🐛 Troubleshooting
-
-### Problemas Comuns
-
-| Problema | Solução |
-|----------|---------|
-| **Erro de memória** | Aumente a RAM ou use `--build-index` separadamente |
-| **Modelo não carrega** | Verifique conexão com internet para download |
-| **API não inicia** | Verifique se a porta 8000 está livre |
-| **Índice não encontrado** | Execute `python scripts/build_index.py` |
-
-### Logs e Debug
-
-```bash
-# Ativar logs detalhados
-export LOG_LEVEL="DEBUG"
-
-# Verificar status da API
-curl http://localhost:8000/health
-
-# Verificar estatísticas
-curl http://localhost:8000/stats
-```
-
-## 📄 Licença
-
-Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 🙏 Agradecimentos
-
-- **Dataset**: [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/olistbr/brazilian-ecommerce)
-- **Modelos**: [Hugging Face Transformers](https://huggingface.co/)
-- **Embeddings**: [Sentence Transformers](https://www.sbert.net/)
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/)
-- **Banco Vetorial**: [FAISS](https://github.com/facebookresearch/faiss)
-
-## 📞 Suporte
-
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/olist-reviews/issues)
-- **Documentação**: [docs/](docs/)
-- **Email**: team@olist-reviews.com
-
----
-
-**Desenvolvido com ❤️ para análise de sentimentos de reviews brasileiros**
-
-*Transformando feedback em inteligência de produto desde 2024* 
