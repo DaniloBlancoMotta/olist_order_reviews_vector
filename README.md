@@ -8,6 +8,8 @@
 
 > **Transforme reviews de clientes em inteligência de produto** com nossa API completa de análise de sentimentos, combinando **busca semântica (RAG)** com **modelos de linguagem natural** para extrair insights valiosos dos feedbacks dos clientes.
 
+## URL localhost Análise de Sentimento Dashboard: http://localhost:8501
+
 ## 🚀 Características Principais
 
 | Funcionalidade | Descrição | Status |
