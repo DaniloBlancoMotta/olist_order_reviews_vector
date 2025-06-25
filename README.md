@@ -174,51 +174,66 @@ response = requests.post(
     "neutro": 20,
     "negativo": 10
   }
-}
-```
+# Análise Exploratória de Dados: Reviews do Olist
 
-📊 Distribuição das Notas
-A maioria dos reviews tem nota 5 (57.8%)
-Nota média é 4.09, indicando alta satisfação geral
+Este documento apresenta os principais insights obtidos a partir da análise exploratória do dataset de reviews de pedidos do Olist (`olist_order_reviews_dataset.csv`). As visualizações e métricas geradas nos ajudam a entender o comportamento dos clientes e a qualidade percebida dos produtos e serviços.
 
-Distribuição das notas:
-Nota 5: 57,328 (57.8%)
-Nota 4: 19,142 (19.3%)
-Nota 1: 11,424 (11.5%)
-Nota 3: 8,179 (8.2%)
-Nota 2: 3,151 (3.2%)
+## 📊 Distribuição das Notas
 
-⏰ Análise Temporal
-Visualizações mostram a tendência diária e mensal dos reviews
-Gráficos permitem identificar picos e quedas no volume de avaliações
-Padrão sazonal por mês do ano
+A análise das notas (`review_score`) revela um alto nível de satisfação entre os clientes.
 
-💬 Análise dos Comentários
-41.3% dos reviews têm comentários (40,977)
-58.7% são reviews sem comentários (58,247)
+* A **maioria dos reviews tem nota 5**, representando **57.8%** do total.
+* A **nota média geral é de 4.09**, o que indica uma alta satisfação geral com os pedidos.
 
-Características dos comentários:
-Média: 68.6 caracteres
-Mediana: 53.0 caracteres
-Média de palavras: 11.7
-Mediana de palavras: 9.0
+**Distribuição detalhada das notas:**
+* **Nota 5**: 57.328 reviews (**57.8%**)
+* **Nota 4**: 19.142 reviews (**19.3%**)
+* **Nota 1**: 11.424 reviews (**11.5%**)
+* **Nota 3**: 8.179 reviews (**8.2%**)
+* **Nota 2**: 3.151 reviews (**3.2%**)
 
-🔤 Palavras Mais Frequentes
-Top 10 palavras mais usadas:
-produto: 18,428 vezes
-prazo: 8,475 vezes
-entrega: 6,528 vezes
-antes: 5,626 vezes
-chegou: 5,555 vezes
-recebi: 5,274 vezes
-bom: 4,607 vezes
-recomendo: 4,337 vezes
-entregue: 3,779 vezes
-veio: 3,285 vezes
+## ⏰ Análise Temporal dos Reviews
 
+As visualizações temporais (gráficos diários e mensais da data de criação dos reviews) permitem observar a evolução do volume de avaliações ao longo do tempo.
 
-💡 Principais Insights
-Alta Satisfação: A maioria dos clientes está muito satisfeita (77.1% dão notas 4 ou 5)
-Foco em Logística: Palavras como "prazo", "entrega", "chegou" são muito frequentes
-Comentários Concisos: A maioria dos comentários é relativamente curta (mediana de 9 palavras)
-Feedback Positivo: Palavras como "bom", "recomendo", "excelente" aparecem com frequência
+* Os gráficos ajudam a identificar **picos e quedas** significativas no volume de avaliações, que podem estar associados a promoções, feriados ou outros eventos.
+* Foi identificado um **padrão sazonal por mês do ano**, indicando variações cíclicas na atividade de reviews.
+
+## 💬 Análise dos Comentários
+
+Exploramos a presença e as características dos comentários textuais nos reviews.
+
+* **41.3%** dos reviews possuem comentários (totalizando **40.977** reviews).
+* **58.7%** dos reviews são apenas avaliações com notas, sem comentários adicionais (**58.247** reviews).
+
+**Características dos comentários com texto:**
+* **Média de caracteres**: 68.6
+* **Mediana de caracteres**: 53.0
+* **Média de palavras**: 11.7
+* **Mediana de palavras**: 9.0
+
+## 🔤 Palavras Mais Frequentes nos Comentários
+
+Uma análise de frequência das palavras nos comentários (`review_comment_message`) revela os termos mais utilizados pelos clientes.
+
+**Top 10 palavras mais usadas:**
+1.  **produto**: 18.428 vezes
+2.  **prazo**: 8.475 vezes
+3.  **entrega**: 6.528 vezes
+4.  **antes**: 5.626 vezes
+5.  **chegou**: 5.555 vezes
+6.  **recebi**: 5.274 vezes
+7.  **bom**: 4.607 vezes
+8.  **recomendo**: 4.337 vezes
+9.  **entregue**: 3.779 vezes
+10. **veio**: 3.285 vezes
+
+## 💡 Principais Insights
+
+Com base nas análises acima, podemos extrair as seguintes conclusões chave:
+
+* **Alta Satisfação do Cliente**: A esmagadora maioria dos clientes está muito satisfeita, com **77.1%** das avaliações classificadas como **nota 4 ou 5**.
+* **Foco na Logística e Entrega**: As palavras mais frequentes nos comentários ("prazo", "entrega", "chegou", "recebi", "entregue") indicam que a **logística e o cumprimento dos prazos** são aspectos cruciais e frequentemente mencionados pelos clientes.
+* **Comentários Concisos**: A mediana de **9 palavras** por comentário sugere que a maioria dos clientes expressa seu feedback de forma direta e objetiva.
+* **Feedback Positivo Dominante**: A recorrência de termos como "bom" e "recomendo" reforça o cenário de alta satisfação geral.
+
