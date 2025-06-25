@@ -177,49 +177,41 @@ response = requests.post(
 }
 ```
 
-## 🔧 Configuração
-
-### Variáveis de Ambiente
-
-```bash
-# Dataset
-export DATASET_PATH="data/olist_order_reviews_dataset.csv"
-
-# Modelos de IA
-export MODEL_NAME="all-MiniLM-L6-v2"
-export SENTIMENT_MODEL="distilbert-base-uncased-finetuned-sst-2-english"
-export BERT_MODEL="bert-base-uncased"
-
-# API
-
-# RAG
-export TOP_K_RESULTS="5"
-export SIMILARITY_THRESHOLD="0.7"
-export MAX_CONTEXT_LENGTH="512"
-
-# Logging
-export LOG_LEVEL="INFO"
-```
-
-### Arquivo de Configuração
-
-As configurações podem ser ajustadas no arquivo `src/olist_reviews/config.py`:
-
-```python
-class Config:
-    # Configurações do Dataset
-    DATASET_PATH = "data/olist_order_reviews_dataset.csv"
-    
-    # Configurações dos Modelos
-    MODEL_NAME = "all-MiniLM-L6-v2"
-    SENTIMENT_MODEL = "distilbert-base-uncased-finetuned-sst-2-english"
-    
-    # Configurações da API
-    API_HOST =
-    API_PORT = 
-
-
-
-
-
-
+📊 Distribuição das Notas
+A maioria dos reviews tem nota 5 (57.8%)
+Nota média é 4.09, indicando alta satisfação geral
+Distribuição das notas:
+Nota 5: 57,328 (57.8%)
+Nota 4: 19,142 (19.3%)
+Nota 1: 11,424 (11.5%)
+Nota 3: 8,179 (8.2%)
+Nota 2: 3,151 (3.2%)
+⏰ Análise Temporal
+Visualizações mostram a tendência diária e mensal dos reviews
+Gráficos permitem identificar picos e quedas no volume de avaliações
+Padrão sazonal por mês do ano
+💬 Análise dos Comentários
+41.3% dos reviews têm comentários (40,977)
+58.7% são reviews sem comentários (58,247)
+Características dos comentários:
+Média: 68.6 caracteres
+Mediana: 53.0 caracteres
+Média de palavras: 11.7
+Mediana de palavras: 9.0
+🔤 Palavras Mais Frequentes
+Top 10 palavras mais usadas:
+produto: 18,428 vezes
+prazo: 8,475 vezes
+entrega: 6,528 vezes
+antes: 5,626 vezes
+chegou: 5,555 vezes
+recebi: 5,274 vezes
+bom: 4,607 vezes
+recomendo: 4,337 vezes
+entregue: 3,779 vezes
+veio: 3,285 vezes
+💡 Principais Insights
+Alta Satisfação: A maioria dos clientes está muito satisfeita (77.1% dão notas 4 ou 5)
+Foco em Logística: Palavras como "prazo", "entrega", "chegou" são muito frequentes
+Comentários Concisos: A maioria dos comentários é relativamente curta (mediana de 9 palavras)
+Feedback Positivo: Palavras como "bom", "recomendo", "excelente" aparecem com frequência
